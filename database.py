@@ -9,8 +9,8 @@ DATABASE_URL = "sqlite:///database.db"
 # Base.metadata.create_all(engine)
 
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://rupesh:fyndtest123@rupesh.mysql.pythonanywhere-services.com/rupesh$fynd'
-
 engine=create_engine(SQLALCHEMY_DATABASE_URI)
+Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind = engine)
 session = Session()
