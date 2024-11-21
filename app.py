@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    # add_Product()
+    add_Product()
     get_Product()
     return render_template('homepage.html')
 
@@ -80,10 +80,10 @@ def user(username):
 def about(subpath):
     return f"<h1> Path: #{escape(subpath)} </h1>"
 
-# def add_Product():
-#     product = Products(name = "Product1", price = 20, quantity = 10)
-#     session.add(product)
-#     session.commit()
+def add_Product():
+    product = Products(name = "Product1", price = 20, quantity = 10)
+    session.add(product)
+    session.commit()
 
 def get_Product():
     return session.query(Products).all()
